@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import tweepy, time, sys
+import tweepy, time, sys, requests, os
 
 CONSUMER_KEY = ''
 CONSUMER_SECRET = ''
