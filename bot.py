@@ -1,7 +1,11 @@
 #!/usr/bin/env python
  
 from connection import *
+from download import *
 
-argfile = str(sys.argv[1])
+txt = str(sys.argv[1])
+filename = "images/cam.jpg"
 
-api.update_status(argfile)
+status_code = download_image(filename, "http://infotrafic.nantesmetropole.fr/data/webcams/rt742.jpg")
+if status_code == 200:
+    api.update_with_media(filename, txt)
