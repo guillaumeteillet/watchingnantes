@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import requests
+import requests.packages.urllib3
+requests.packages.urllib3.disable_warnings()
 
 def download_image(filename, url):
     request = requests.get(url, stream=True)
