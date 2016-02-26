@@ -15,26 +15,24 @@ def random_security_cam(cursor):
     status_code = download_image(filename, cam[3])
     idCam = unicode(cam[1])
     name = unicode(cam[2])
-    status = "Surveillance camera "+ str(unicode(idCam)) +" - "+ str(unicode(name)) +" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes"
+    print ">>>>"+idCam
+    print ">>>>>>>>"+name
 
     if status_code == 200:
-        api.update_with_media(filename, status)
-        print status
+        api.update_with_media(filename, "Surveillance camera "+ idCam +" - "+ name +" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes")
 
 def specific_security_cam(cursor, username, idCam):
     cursor.execute('SELECT * FROM cameras WHERE camera_id="'+idCam+'"')
     cam = cursor.fetchone()
 
     if str(cam) == "None":
-        api.update_status("@"+str(unicode(username))+" Sorry, This security camera is not available or does not exist.")
+        api.update_status("@"+username+" Sorry, This security camera is not available or does not exist.")
     else:
         now = datetime.datetime.now()
         filename = "images/user.jpg"
         status_code = download_image(filename, cam[3])
         idCam = unicode(cam[1])
         name = unicode(cam[2])
-        status = "@"+str(unicode(username))+" You asked the security camera "+ str(unicode(idCam)) +" - "+ str(unicode(name ))+" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes"
 
         if status_code == 200:
-            api.update_with_media(filename, status)
-            print status
+            api.update_with_media(filename, "@"+username+" You asked the security camera "+ idCam +" - "+ name +" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes")
