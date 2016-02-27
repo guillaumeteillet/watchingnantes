@@ -36,12 +36,18 @@ while True:
         if idLastMention == 0:
             mymentions = api.mentions_timeline()
         else:
-            mymentions = api.mentions_timeline(since_id=idLastMention)
+            try:
+                mymentions = api.mentions_timeline(since_id=idLastMention)
+            except tweepy.error.RateLimitError as e:
+                time.sleep(120)
+                print "FAILED READING MENTIONS ERROR CODE : "+ str(e.message[0]['code'])
+                continue
         mymentions.reverse()
         for tweet in mymentions:
             try:
                 print "MENTION : " + str(unicode(tweet.text).encode("utf-8"))+" FROM  "+str(unicode(tweet.user.screen_name).encode("utf-8"))
                 cmd = str(unicode(tweet.text).encode("utf-8")).split()
+
 
                 # Ask for a specific security camera
                 if cmd[1] == "CAM":
@@ -50,8 +56,8 @@ while True:
                 cursor.execute('UPDATE parameters SET value="'+str(tweet.id)+'" WHERE param="idLastMention"')
                 client.commit()
                 idLastMention = tweet.id
-            except tweepy.TweepError:
+            except tweepy.TweepError as e:
                 time.sleep(120)
-                print "FAILED MENTIONS"
+                print "FAILED ANALYZE MENTIONS ERROR CODE : "+ str(e.message[0]['code'])
                 continue
         timeLastCheck = time.time()
