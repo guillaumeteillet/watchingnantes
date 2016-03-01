@@ -15,11 +15,12 @@ def random_security_cam(cursor):
     status_code = download_image(filename, cam[3])
     idCam = unicode(cam[1])
     name = unicode(cam[2])
-    print ">>>>"+idCam
-    print ">>>>>>>>"+name
 
     if status_code == 200:
-        api.update_with_media(filename, "Surveillance camera "+ idCam +" - "+ name +" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes")
+        try:
+            api.update_with_media(filename, "Surveillance camera "+ idCam +" - "+ name +" - "+now.strftime("%A %d %B %Y at %H:%M")+ " #Nantes")
+        except tweepy.TweepError as e:
+            print "FAILED : specific_security_cam : "+ str(e.message[0]['code'])
 
 def specific_security_cam(cursor, username, idCam):
     cursor.execute('SELECT * FROM cameras WHERE camera_id="'+idCam+'"')
