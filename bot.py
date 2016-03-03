@@ -5,6 +5,7 @@ from connection import *
 from download import *
 from database import *
 from securitycam import *
+from help_bot import *
 
 import time
 
@@ -52,6 +53,10 @@ while True:
                 # Ask for a specific security camera
                 if cmd[1] == "CAM":
                     specific_security_cam(cursor, str(unicode(tweet.user.screen_name)), str(cmd[2]))
+
+                # Ask for help
+                if cmd[1] == "HELP":
+                    help_bot(str(unicode(tweet.user.screen_name)));
 
                 cursor.execute('UPDATE parameters SET value="'+str(tweet.id)+'" WHERE param="idLastMention"')
                 client.commit()
