@@ -50,4 +50,4 @@ def specific_security_cam(cursor, username, idCam):
                     api.update_with_media(filename, answer)
                 except tweepy.TweepError as e:
                     print "FAILED : specific_security_cam : "+ str(e.message[0]['code'])
-            print "ANSWER : " + answer
+            print "ANSWER : " + str(unicode(answer).encode("utf-8"))

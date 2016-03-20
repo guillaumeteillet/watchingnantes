@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import tweepy, time
+
+#Preprod WN
+CONSUMER_KEY = 'cBV9JxALZCx06mqVn5yQCo2n5'
+CONSUMER_SECRET = 'CpV8qxuq2irpVyE5UNqi4PzzkoZM6u1o04lhHzhE1jPNaPWawr'
+ACCESS_KEY = '701516142217732096-B32B4AIlrZurcoy7VqGRwLx7FYefSHs'
+ACCESS_SECRET = 'okRRBWv03h9fFFaLjo2VuedZV81y3c8pQ5RdLXKFlTK0N'
+
+#Prod WN
+#CONSUMER_KEY = '0133Q5bdWFKxJ9IbbWiv4XVD6'
+#CONSUMER_SECRET = 'Vkncw38PX6x8I4xZfVamYfUTp8k37tt4D4CqtZYidjaen4ikY1'
+#ACCESS_KEY = '4886104281-zC5FuyQZOoI7vZUrP8c3RGoneFZmLKIFC1bp783'
+#ACCESS_SECRET = 'modZpaLWMYQm7vD10V8xGdzVNWIMKFR96GRVpnDRpUJ4d'
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+api = tweepy.API(auth)
