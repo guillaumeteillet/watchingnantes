@@ -26,7 +26,7 @@ Traffic cameras from the city of Nantes :
 + 721 Willy Brandt : http://infotrafic.nantesmetropole.fr/data/webcams/rt721.jpg
 + 722 Pirmil : http://infotrafic.nantesmetropole.fr/data/webcams/rt722.jpg
 + 723 Route de Rennes-Cassin : http://infotrafic.nantesmetropole.fr/data/webcams/rt723.jpg
-+ 724 Gustave Roch : http://infotrafic.nantesmetropole.fr/data/webcams/rt724.jpg
++ 724 Gustave Roch : http://infotrafic.nantesmetropole.fr/data/webcams/rt724.jpg [BROKEN]
 + 725 Pont Clémenceau - Gréneraie : http://infotrafic.nantesmetropole.fr/data/webcams/rt725/snap_c1.jpg [BROKEN]
 + 726 Beaujoire : http://infotrafic.nantesmetropole.fr/data/webcams/rt726.jpg
 + 727 Rond Point de Paris : http://infotrafic.nantesmetropole.fr/data/webcams/rt727.jpg
@@ -86,3 +86,6 @@ Traffic cameras from the city of Nantes :
 + 792 Place E. Livet : http://infotrafic.nantesmetropole.fr/data/webcams/rt792.jpg
 + 794 Souillarderie : http://infotrafic.nantesmetropole.fr/data/webcams/rt794.jpg
 + 795 Boulevard des Européens : http://infotrafic.nantesmetropole.fr/data/webcams/rt795/snap_c1.jpg
++ 797 Pont Général-Audibert : http://infotrafic.nantesmetropole.fr/data/webcams/rt797/snap_c1.jpg
++ 798 Boulevard de Doulon : http://infotrafic.nantesmetropole.fr/data/webcams/rt798/snap_c1.jpg
++ 799 Carrefour Bd des Belges - Coudray : http://infotrafic.nantesmetropole.fr/data/webcams/rt799/snap_c1.jpg
